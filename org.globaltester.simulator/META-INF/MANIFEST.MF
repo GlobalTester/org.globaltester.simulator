@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Simulator
 Bundle-SymbolicName: org.globaltester.simulator
 Bundle-Version: 0.1.0
-Bundle-Vendor: HJP Consulting
+Bundle-Vendor: HJP Consulting GmbH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: org.globaltester.simulator
