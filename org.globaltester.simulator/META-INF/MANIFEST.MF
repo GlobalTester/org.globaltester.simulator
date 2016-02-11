@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Simulator
+Bundle-Name: GT Simulator
 Bundle-SymbolicName: org.globaltester.simulator
 Bundle-Version: 0.1.0
 Bundle-Vendor: HJP Consulting GmbH
