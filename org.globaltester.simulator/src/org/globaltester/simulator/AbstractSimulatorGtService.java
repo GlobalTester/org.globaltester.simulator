@@ -25,10 +25,18 @@ import org.globaltester.service.GtServiceListener;
  */
 public abstract class AbstractSimulatorGtService extends AbstractGtService {
 
-	Class<? extends Simulator> t;
+	Class<? extends Simulator> type;
 
-	public AbstractSimulatorGtService(Class<? extends Simulator> t) {
-		this.t = t;
+	/**
+	 * Constructs a new {@link AbstractGtService} implementation which checks
+	 * for the given type parameter when performing the default implementation
+	 * of {@link #isRunning()}
+	 * 
+	 * @param type
+	 *            the class to check available services against
+	 */
+	public AbstractSimulatorGtService(Class<? extends Simulator> type) {
+		this.type = type;
 
 		ServiceListener serviceListener = new ServiceListener() {
 			@Override
@@ -51,10 +59,10 @@ public abstract class AbstractSimulatorGtService extends AbstractGtService {
 		BundleContext context = Activator.getContext();
 
 		try {
-			Collection<ServiceReference<Simulator>> simulatorRefernces = context.getServiceReferences(Simulator.class,
+			Collection<ServiceReference<Simulator>> simulatorReferences = context.getServiceReferences(Simulator.class,
 					null);
-			for (ServiceReference<Simulator> curRef : simulatorRefernces) {
-				if (t.isAssignableFrom(context.getService(curRef).getClass()))
+			for (ServiceReference<Simulator> curRef : simulatorReferences) {
+				if (type.isAssignableFrom(context.getService(curRef).getClass()))
 					return true;
 			}
 		} catch (InvalidSyntaxException e) {
