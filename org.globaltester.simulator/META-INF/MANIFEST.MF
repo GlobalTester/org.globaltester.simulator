@@ -4,5 +4,5 @@ Bundle-Name: GT Simulator
 Bundle-SymbolicName: org.globaltester.simulator
 Bundle-Version: 0.1.2.qualifier
 Bundle-Vendor: HJP Consulting GmbH
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.globaltester.simulator
