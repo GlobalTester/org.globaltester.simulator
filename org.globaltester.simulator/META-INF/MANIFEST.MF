@@ -7,4 +7,5 @@ Bundle-Vendor: HJP Consulting GmbH
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.globaltester.simulator
 Require-Bundle: org.globaltester.service,
- org.eclipse.osgi
+ org.eclipse.osgi,
+ org.globaltester.logging
