@@ -1,7 +1,7 @@
 package org.globaltester.simulator;
 
 public class SimulatorConfiguration {
-	private static final String PROPERTY_NAME_SIMULATOR_PAYLOAD_SIZE = "com.hjp.simulator.payload.maxSize";
+	private static final String PROPERTY_NAME_SIMULATOR_PAYLOAD_SIZE = "com.secunet.globaltester.simulator.payload.maxSize";
 	
 	public static final int MAXIMUM_PAYLOAD_SIZE=4000;
 
