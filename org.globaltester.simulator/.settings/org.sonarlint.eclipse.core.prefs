@@ -1,0 +1,5 @@
+autoEnabled=true
+eclipse.preferences.version=1
+extraProperties=
+moduleKey=org.globaltester\:org.globaltester.simulator
+serverId=sonarqube.lab.e.secunet.de
