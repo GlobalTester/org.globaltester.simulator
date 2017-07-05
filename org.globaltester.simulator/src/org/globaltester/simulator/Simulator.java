@@ -69,5 +69,17 @@ public interface Simulator {
 	 * @return the ATR of the simulated card
 	 */
 	public abstract byte [] cardReset();
+	
+	/**
+	 * Register new {@link SimulatorEventListener} to this object
+	 * @param newListeners
+	 */
+	public abstract void addEventListener(SimulatorEventListener... newListeners);
+	
+	/**
+	 * Unregister {@link SimulatorEventListener} from this object.
+	 * @param oldListener
+	 */
+	public abstract void removeEventListener(SimulatorEventListener oldListener);
 
 }
