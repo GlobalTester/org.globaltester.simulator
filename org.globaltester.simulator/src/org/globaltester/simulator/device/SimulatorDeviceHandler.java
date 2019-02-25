@@ -23,6 +23,9 @@ public class SimulatorDeviceHandler implements SimulatorDeviceConnector {
 				retValPriority = retVal.getPriority();
 			}
 		}
+		if (retVal == null) {
+			throw new IllegalStateException("No SimulatorDeviceConnector available! You need to install drivers and/or connect your device."); 
+		}
 		return retVal;
 	}
 	public static void registerDeviceConnector(SimulatorDeviceConnector newConnector) {
@@ -33,20 +36,9 @@ public class SimulatorDeviceHandler implements SimulatorDeviceConnector {
 	
 	
 	/**
-	 * This method terminates all remainders of previous connections.
-	 */
-	private void cleanup() {
-		for (SimulatorDeviceConnector curConnector : connectors) {
-//TODO			curConnector.cleanup();
-		}
-	}
-
-	/**
 	 * Starts the ISO14443 Simulator as a thread.
 	 */
 	public void run() {
-		cleanup();
-		
 		SimulatorDeviceConnector curConnector = getAvailableConnectorByPriority();
 		if (curConnector != null) {
 			curConnector.run();
@@ -62,6 +54,16 @@ public class SimulatorDeviceHandler implements SimulatorDeviceConnector {
 			curConnector.stop();
 		}
 		
+	}
+	
+	public Runnable getCleanupHook() {
+		return new Runnable() {
+			
+			@Override
+			public void run() {
+				stop();
+			}
+		};
 	}
 
 	@Override
