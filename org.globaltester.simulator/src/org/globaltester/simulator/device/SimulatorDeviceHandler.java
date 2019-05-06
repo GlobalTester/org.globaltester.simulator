@@ -3,6 +3,9 @@ package org.globaltester.simulator.device;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.globaltester.base.PreferenceHelper;
+import org.globaltester.simulator.preferences.PreferenceConstants;
+
 /**
  * Consolidates access too all available {@link SimulatorDeviceConnector}
  * instances and routes commands to the prioritized instance.
@@ -23,7 +26,8 @@ public class SimulatorDeviceHandler implements SimulatorDeviceConnector {
 				retValPriority = retVal.getPriority();
 			}
 		}
-		if (retVal == null) {
+		if ((retVal == null) &&
+			Boolean.parseBoolean(PreferenceHelper.getPreferenceValue(PreferenceConstants.PLUGIN_ID, PreferenceConstants.FAIL_WO_DEVICECONNECTOR))) {
 			throw new IllegalStateException("No SimulatorDeviceConnector available! You need to install drivers and/or connect your device."); 
 		}
 		return retVal;

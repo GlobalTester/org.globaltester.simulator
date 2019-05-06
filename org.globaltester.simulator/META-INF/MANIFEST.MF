@@ -7,7 +7,9 @@ Bundle-Vendor: secunet Security Networks AG
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.globaltester.simulator,
  org.globaltester.simulator.device,
- org.globaltester.simulator.event
+ org.globaltester.simulator.event,
+ org.globaltester.simulator.preferences
 Require-Bundle: org.globaltester.service,
  org.eclipse.osgi,
- org.globaltester.logging
+ org.globaltester.logging,
+ org.globaltester.base
