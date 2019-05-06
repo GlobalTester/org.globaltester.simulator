@@ -6,6 +6,7 @@ Bundle-Version: 3.4.1.qualifier
 Bundle-Vendor: secunet Security Networks AG
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.globaltester.simulator,
+ org.globaltester.simulator.device,
  org.globaltester.simulator.event
 Require-Bundle: org.globaltester.service,
  org.eclipse.osgi,
